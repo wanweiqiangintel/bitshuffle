@@ -1713,7 +1713,9 @@ int64_t bshuf_trans_bit_elem_AVX512(const void* in, void* out, const size_t size
 /* Shuffle bits within the bytes of eight element blocks. */
 int64_t bshuf_shuffle_bit_eightelem_AVX512(const void* in, void* out, const size_t size,
          const size_t elem_size) {
-
+    FILE* fp1 = fopen("starrocks_wwq_test4.txt","a+");
+    fprintf(fp1,"==============bshuf_shuffle_bit_eightelem_AVX512============\n");
+    fclose(fp1);
     CHECK_MULT_EIGHT(size);
 
     // With a bit of care, this could be written such that such that it is
